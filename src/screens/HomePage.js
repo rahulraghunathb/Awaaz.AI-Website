@@ -7,23 +7,31 @@ function HomePage() {
   return (
     <main className="home-page">
       <div className="content-container">
-        <p id="mainheading"> AWAAZ.ai </p>
-        <p>The Limitless Phone Sales Agent</p>
-        <p id="tagline">
+        {/* <p id="mainheading"> AWAAZ.AI </p> */}
+        <h1> AWAAZ.AI </h1>
+        <p className="tagline">The Limitless Phone Sales Agent</p>
+        <p className="tagline2">
           AI Powered Customer Interactions: the Future of Call Centers is Here.
         </p>
 
-        <div className="spline">
-          <Spline scene="https://prod.spline.design/gi-d-8lQ9luXdShq/scene.splinecode" />
-        </div>
+        <div className="section2">
+          <div className="para1">
+            <p>
+              Just imagine having as many exquisite phone sales and support
+              agents as you wish. What would that mean for your business? Awaaz
+              sounds so human-like , your clients won't be able to tell the
+              difference. This means humans can now be liberated to deal with
+              more complex tasks behind the scenes.
+            </p>
+          </div>
 
-        <p>
-          Just imagine having as many exquisite phone sales and support agents
-          as you wish. What would that mean for your business? Awaaz sounds so
-          human-like , your clients won't be able to tell the difference. This
-          means humans can now be liberated to deal with more complex tasks
-          behind the scenes.
-        </p>
+          <div className="spline">
+            <Spline
+              style={{ width: '100%', height: '100%' }}
+              scene="https://prod.spline.design/XY-ICh0HuUHU4Wef/scene.splinecode"
+            />
+          </div>
+        </div>
 
         {/* <div className="spline-ai-container">
           <div className="spline-ai">

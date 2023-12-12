@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
+:root {
+  --light-color: #da0c81;
+  --dark-color: #610c9f;
+}
+
 .home-page {
   color: rgb(248, 245, 245);
   /* display: block; */
@@ -9,26 +16,79 @@
   align-items: center;
 }
 
-#mainheading {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 60px;
-  margin-top: 40px;
-  /* position: relative; */
+/* Company Name */
+
+h1 {
+  display: inline;
+  font-size: 15vw;
+  text-transform: uppercase;
+  color: var(--dark-color);
+  font-family: 'Monoton', Helvetica, sans-serif;
+  letter-spacing: 7px;
+  margin: 0;
 }
 
-#tagline {
+@media (min-width: 400px) {
+  h1 {
+    font-size: 9vw;
+  }
+}
+
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 150px;
+  }
+}
+
+@supports (-webkit-background-clip: text) {
+  h1 {
+    color: transparent;
+    /* background: linear-gradient(
+      6.5deg,
+      var(--light-color) 50%,
+      var(--dark-color) 0
+    ); */
+    background: repeating-linear-gradient(
+      135deg,
+      var(--light-color),
+      var(--dark-color) 80px
+    );
+    -webkit-background-clip: text;
+  }
+}
+
+.tagline {
+  margin: 0px;
   text-align: center;
+}
+
+.tagline2 {
+  margin: 0px;
+  text-align: center;
+}
+
+.section2 {
+  /* display: flex; */
+  /* flex: 1; */
+  /* flex-direction: row; */
+  width: 100%;
+  /* justify-content: space-around; */
 }
 
 .spline {
-  width: 1000px;
-  height: 1000px;
-  border: 5px solid red;
+  width: 400px;
+  height: 400px;
+  /* border: 5px solid red; */
   /* position: absolute; */
   align-items: center;
   z-index: -1;
+}
+
+.para1 {
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
 }
 
 .spline-ai-container {
