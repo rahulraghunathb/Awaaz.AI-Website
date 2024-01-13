@@ -1,9 +1,34 @@
-import React from 'react'
+import React from 'react';
 import './HomePage.css' // Import the stylesheet
 import '../components/GlassCard.css'
 import Spline from '@splinetool/react-spline'
+import PhoneForm from '../components/PhoneForm';
 
 function HomePage() {
+
+  const handlePhoneSubmit = async (phoneNumber) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/make-call', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phoneNumber }),
+      });
+
+      const message = await response.text();
+      console.log(message);
+
+      // Display an alert on successful call initiation
+      alert('Call initiated successfully!');
+    } catch (error) {
+      console.error(error);
+
+      // Display an alert on error
+      alert(`Error: ${error.message}`);
+    }
+  };
+
   return (
     <main className="home-page">
       <div className="content-container">
@@ -13,6 +38,7 @@ function HomePage() {
         <p className="tagline2">
           AI Powered Customer Interactions: the Future of Call Centers is Here.
         </p>
+        <PhoneForm onSubmit={handlePhoneSubmit} />
 
         <div className="section2">
           <div className="para1">
@@ -75,19 +101,9 @@ function HomePage() {
           </div>
         </div>
 
-        <form>
-          <input
-            type="text"
-            placeholder="Enter your text here..."
-            className="text-input"
-          />
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </form>
-      </div>
+      </div>      
     </main>
   )
 }
 
-export default HomePage
+export default HomePage;

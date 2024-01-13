@@ -1,5 +1,4 @@
-
-// server/server.js
+// server/server.js  (Documented)
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -9,7 +8,10 @@ const app = express();
 const port = 5000;
 const cors = require('cors');
 
-
+// Importing config.js using a relative path
+const twilio = require('twilio'); 
+const { accountSid, authToken } = require('./config');
+const twilioClient = twilio(accountSid, authToken);
 
 // MySQL connection configuration
 const db = mysql.createConnection({
@@ -52,10 +54,32 @@ app.post('/api/contact', (req, res) => {
   });
 });
 
-// Serve static files from the 'public' directory
+//Demo request end point 
+app.post('/api/make-call', (req, res) => {
+  const { phoneNumber } = req.body;
+
+  // we can adjust TWiML in the link 
+  const twilioUrl = 'http://demo.twilio.com/docs/voice.xml';
+
+  // Make a call using Twilio(refer Twilio Documentation)
+  twilioClient.calls.create({
+    url: twilioUrl,
+    to: phoneNumber,
+    from: '+17817134793',
+  })
+  .then(call => {
+    console.log('Call initiated successfully:', call.sid);
+    res.status(200).send('Call initiated successfully');
+  })
+  .catch(error => {
+    console.error('Error initiating call:', error);
+    res.status(500).send(`Error: ${error.message}`);
+  });
+});
+
+
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Handle other routes by serving the 'index.html' file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
