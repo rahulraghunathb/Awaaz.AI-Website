@@ -1,0 +1,62 @@
+/* ContactPage.css */
+.contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #3498db; /* Border color: Light Blue */
+  background-color: #2c3e50; /* Background color: Dark Blue */
+  color: #ecf0f1; /* Text color: Light Gray */
+  border-radius: 10px; /* Rounded corners for the container */
+}
+
+.contact-page h2 {
+  padding: 10px;
+  color: #3498db; /* Heading color: Light Blue */
+}
+
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page .name-fields {
+  display: flex;
+  /* padding-left: 10px; */
+  justify-content: space-between;
+}
+
+.contact-page .name-fields input {
+  width: 100%; /* Adjust the width as needed */
+}
+
+.contact-page label {
+  margin-bottom: 10px;
+  padding: 10px; /* Add padding on all sides of the labels */
+  color: #ecf0f1; /* Label color: Light Gray */
+}
+
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+
+.contact-page button {
+  background-color: #3498db; /* Button color: Light Blue */
+  color: #ecf0f1; /* Text color: Light Gray */
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  /* width: 100%; */
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.contact-page button:hover {
+  background-color: #2980b9; /* Hover color: Darker Blue */
+}
