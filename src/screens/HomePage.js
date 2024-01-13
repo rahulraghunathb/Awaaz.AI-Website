@@ -40,36 +40,36 @@ function HomePage() {
         </div> */}
 
         <div className="glass-container">
-          <div class="glass-card">
+          <div className="glass-card">
             <p>
               A glass-like card to demonstrate the{' '}
               <strong>Glassmorphism UI design</strong> trend.
             </p>
-            <p class="card-footer">Created by Rahul</p>
+            <p className="card-footer">Created by Rahul</p>
           </div>
         </div>
 
         <div className="card-list">
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>
               All of Pearl's conversations are recorded and accessible,
               providing you with valuable insights into customer interactions.
             </p>
             <p>Uiverse</p>
           </div>
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>Powered By</p>
             <p>Uiverse</p>
           </div>
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>Powered By</p>
             <p>Uiverse</p>
           </div>
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>Powered By</p>
             <p>Uiverse</p>
           </div>
