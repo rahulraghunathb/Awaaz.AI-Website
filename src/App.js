@@ -7,7 +7,7 @@ import HomePage from './screens/HomePage'
 import Footer from './components/Footer'
 import ContactPage from './screens/ContactPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import CardSlider from './screens/Slider';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/" element={<HomePage />} />
       </Routes>
+    <CardSlider /> 
       <Footer />
     </div>
   )

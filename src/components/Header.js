@@ -19,7 +19,18 @@ function Header() {
         <li>
           <Link to="/faq">Faq</Link>
         </li>
+        <div className="large-space"></div>
+
+  {/* Buttons at the right edge */}
+  <li>
+    <button id="loginButton">Login</button>
+  </li>
+  <li>
+    <button id="signButton">Sign up</button>
+  </li>
       </ul>
+
+      
     </nav>
   )
 }

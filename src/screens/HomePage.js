@@ -3,6 +3,8 @@ import './HomePage.css' // Import the stylesheet
 import '../components/GlassCard.css'
 import Spline from '@splinetool/react-spline'
 import PhoneForm from '../components/PhoneForm';
+import Lights from './Lights';
+
 
 function HomePage() {
 
@@ -28,18 +30,23 @@ function HomePage() {
       alert(`Error: ${error.message}`);
     }
   };
-
+   
   return (
+    
+    
     <main className="home-page">
+      <Lights />
       <div className="content-container">
         {/* <p id="mainheading"> AWAAZ.AI </p> */}
+        
         <h1> AWAAZ.AI </h1>
         <p className="tagline">The Limitless Phone Sales Agent</p>
         <p className="tagline2">
           AI Powered Customer Interactions: the Future of Call Centers is Here.
         </p>
+        
         <PhoneForm onSubmit={handlePhoneSubmit} />
-
+        
         <div className="section2">
           <div className="para1">
             <p>
@@ -49,6 +56,7 @@ function HomePage() {
               difference. This means humans can now be liberated to deal with
               more complex tasks behind the scenes.
             </p>
+           
           </div>
 
           <div className="spline">
@@ -65,7 +73,7 @@ function HomePage() {
           </div>
         </div> */}
 
-        <div className="glass-container">
+        {/* <div className="glass-container">
           <div className="glass-card">
             <p>
               A glass-like card to demonstrate the{' '}
@@ -73,35 +81,11 @@ function HomePage() {
             </p>
             <p className="card-footer">Created by Rahul</p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="card-list">
-          <div className="card">
-            <p className="heading">Popular this month</p>
-            <p>
-              All of Pearl's conversations are recorded and accessible,
-              providing you with valuable insights into customer interactions.
-            </p>
-            <p>Uiverse</p>
-          </div>
-          <div className="card">
-            <p className="heading">Popular this month</p>
-            <p>Powered By</p>
-            <p>Uiverse</p>
-          </div>
-          <div className="card">
-            <p className="heading">Popular this month</p>
-            <p>Powered By</p>
-            <p>Uiverse</p>
-          </div>
-          <div className="card">
-            <p className="heading">Popular this month</p>
-            <p>Powered By</p>
-            <p>Uiverse</p>
-          </div>
-        </div>
-
-      </div>      
+      
+    </div>
+          
     </main>
   )
 }
