@@ -1,7 +1,9 @@
 // ContactPage.js
+
 import React, { useState } from 'react';
 import './ContactPage.css'; 
 import axios from 'axios';
+
 
 function ContactPage() {
   // State to manage form data
@@ -9,6 +11,7 @@ function ContactPage() {
     firstName: '',
     lastName: '',
     email: '',
+
     message: '',
   });
 
@@ -26,6 +29,7 @@ function ContactPage() {
     try {
       // Send data to the server
       await axios.post('http://localhost:5000/api/contact', formData);
+ 
 
       // Reset form after successful submission
       setFormData({
@@ -48,6 +52,7 @@ function ContactPage() {
     <div className="contact-page">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit}>
+    
       <div className="name-fields">
           <label>
             First Name:
@@ -96,3 +101,4 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
