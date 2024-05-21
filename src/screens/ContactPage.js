@@ -1,7 +1,9 @@
 // ContactPage.js
-import React, { useState } from 'react'
-import './ContactPage.css'
-import axios from 'axios'
+
+import React, { useState } from 'react';
+import './ContactPage.css'; 
+import axios from 'axios';
+
 
 function ContactPage() {
   // State to manage form data
@@ -9,45 +11,49 @@ function ContactPage() {
     firstName: '',
     lastName: '',
     email: '',
-    message: ''
-  })
+
+    message: '',
+  });
 
   // Function to handle form input changes
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     // Update the form data state
-    setFormData((prevData) => ({ ...prevData, [name]: value }))
-  }
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
       // Send data to the server
-      await axios.post('http://localhost:5000/api/contact', formData)
+      await axios.post('http://localhost:5000/api/contact', formData);
+ 
 
       // Reset form after successful submission
       setFormData({
         firstName: '',
         lastName: '',
         email: '',
-        message: ''
-      })
+        message: '',
+      });
 
-      alert('Data submitted successfully!')
+      alert('Data submitted successfully!');
     } catch (error) {
-      console.error('Error submitting data:', error)
-      alert('Error submitting data. Please try again.')
+      console.error('Error submitting data:', error);
+      alert('Error submitting data. Please try again.');
     }
-  }
+  };
+
 
   // JSX structure for the Contact Page component
   return (
     <div className="contact-page">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit}>
-        <div className="name-fields">
+    
+      <div className="name-fields">
           <label>
             First Name:
             <input
@@ -91,7 +97,8 @@ function ContactPage() {
         <button type="submit">Submit</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default ContactPage
+export default ContactPage;
+

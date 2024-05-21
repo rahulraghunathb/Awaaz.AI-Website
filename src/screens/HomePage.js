@@ -1,9 +1,34 @@
-import React from 'react'
+import React from 'react';
 import './HomePage.css' // Import the stylesheet
 import '../components/GlassCard.css'
 import Spline from '@splinetool/react-spline'
+import PhoneForm from '../components/PhoneForm';
 
 function HomePage() {
+
+  const handlePhoneSubmit = async (phoneNumber) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/make-call', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phoneNumber }),
+      });
+
+      const message = await response.text();
+      console.log(message);
+
+      // Display an alert on successful call initiation
+      alert('Call initiated successfully!');
+    } catch (error) {
+      console.error(error);
+
+      // Display an alert on error
+      alert(`Error: ${error.message}`);
+    }
+  };
+
   return (
     <main className="home-page">
       <div className="content-container">
@@ -13,6 +38,7 @@ function HomePage() {
         <p className="tagline2">
           AI Powered Customer Interactions: the Future of Call Centers is Here.
         </p>
+        <PhoneForm onSubmit={handlePhoneSubmit} />
 
         <div className="section2">
           <div className="para1">
@@ -40,54 +66,44 @@ function HomePage() {
         </div> */}
 
         <div className="glass-container">
-          <div class="glass-card">
+          <div className="glass-card">
             <p>
               A glass-like card to demonstrate the{' '}
               <strong>Glassmorphism UI design</strong> trend.
             </p>
-            <p class="card-footer">Created by Rahul</p>
+            <p className="card-footer">Created by Rahul</p>
           </div>
         </div>
 
         <div className="card-list">
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>
               All of Pearl's conversations are recorded and accessible,
               providing you with valuable insights into customer interactions.
             </p>
             <p>Uiverse</p>
           </div>
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>Powered By</p>
             <p>Uiverse</p>
           </div>
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>Powered By</p>
             <p>Uiverse</p>
           </div>
-          <div class="card">
-            <p class="heading">Popular this month</p>
+          <div className="card">
+            <p className="heading">Popular this month</p>
             <p>Powered By</p>
             <p>Uiverse</p>
           </div>
         </div>
 
-        <form>
-          <input
-            type="text"
-            placeholder="Enter your text here..."
-            className="text-input"
-          />
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </form>
-      </div>
+      </div>      
     </main>
   )
 }
 
-export default HomePage
+export default HomePage;
